@@ -2,10 +2,10 @@ package org.java.demo.obj;
 
 public class Movie {
 	private int id;
-	private int title;
+	private String title;
 	
 	
-	public Movie(int id, int title) {
+	public Movie(int id, String title) {
 		setId(id);
 		setTitle(title);
 	}
@@ -15,11 +15,16 @@ public class Movie {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getTitle() {
+	public String getTitle() {
 		return title;
 	}
-	public void setTitle(int title) {
+	public void setTitle(String title) {
 		this.title = title;
+	}
+	
+	@Override
+	public String toString() {
+		return "[M" + getId() + "] - " + getTitle();
 	}
 	
 	
