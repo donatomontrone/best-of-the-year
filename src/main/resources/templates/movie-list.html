@@ -5,19 +5,26 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Song</title>
+	<title>Movies</title>
 	<link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}" />
 
 </head>
 
 <body>
 	<th:block th:replace="fragments/header :: header"></th:block>
-	<main th:object="${song}">
+	<main>
 		<div class="container">
-			<div class="row">
-				<div class="col-12 text-center">
-					<h1 th:if="${song != null}"> <span class="badge bg-primary">[[*{title}]]</span></h1>
-					<h1 th:unless="${song != null}"> <span class="badge bg-danger">Nessun brano trovato</span></h1>
+			<div class="row justify-content-center">
+				<div class="col-10 text-center">
+					<h1 class="mb-3">Best Film</h1>
+					<ul class="list-group">
+						<li th:each="movie : ${movies}" th:object="${movie}" class="list-group-item">
+
+							<a th:href="@{/movies/{id} (id=*{id})}">
+								<h4>[[*{title}]]</h4>
+							</a>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>
