@@ -1,13 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Home</title>
-	</head>
-	
-	<body>
-		<h1 th:text="'Best of the year by ' + ${name} + ' ' + ${lastname}"></h1>
-	</body>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home</title>
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}" />
+</head>
+
+<body>
+	<header class="mb-5">
+		<nav class="navbar navbar-expand-sm bg-body-tertiary">
+			<div class="container-fluid">
+				<h1 class="navbar-brand mb-0">Best of</h1>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+					aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item me-3">
+							<th:block th:replace="fragments/button :: movies"></th:block> 
+						</li>
+						<li class="nav-item">
+							<th:block th:replace="fragments/button :: songs"></th:block> 
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<hr class="m-0 p-0">
+	</header>
+<main class="pt-5 text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 th:text="'Best of by ' + ${name} + ' ' + ${lastname}">Best of [[${name}]] [[${lastname}]]</h1>
+            </div>
+            <div class="col-12">
+                <img th:src="@{/img/image.png}" class="img-fluid" />
+            </div>
+            <div class="col-12">
+                <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam quam tenetur quibusdam maiores,
+                    iusto commodi. Enim sunt illum odit tenetur explicabo est sapiente? Eligendi libero nemo adipisci
+                    quod nobis excepturi accusamus optio esse rem? Beatae, adipisci placeat, voluptas doloribus officiis
+                    facilis ratione culpa maiores voluptates qui distinctio animi consequuntur perferendis reprehenderit
+                    quam ut nobis asperiores in eligendi, voluptate commodi! Suscipit saepe, sequi sint doloribus
+                    doloremque inventore dolores itaque at exercitationem optio maxime excepturi iste deserunt beatae.
+                    Quae id obcaecati numquam earum beatae? Hic neque eos quos tenetur fugiat praesentium obcaecati?
+                    Facilis suscipit est quam totam qui iste consequatur, similique magnam cupiditate ea repudiandae
+                    deleniti corrupti voluptates laboriosam impedit perspiciatis nam asperiores amet quisquam, excepturi
+                    labore dolorem. Ad, commodi omnis, eveniet inventore, cupiditate exercitationem deserunt asperiores
+                    natus assumenda qui neque sint fugit. Ducimus similique sequi eius est ratione facere dolorum
+                    molestias id nulla. Perferendis, voluptate. Rem nobis ut in repellat, accusantium labore! Architecto
+                    atque dolor quod eligendi et? Voluptatem reprehenderit cumque enim vero obcaecati cum, tempore
+                    atque? Ratione consequatur, in est quis omnis neque cupiditate maxime mollitia aliquam ipsam
+                    voluptas molestias a temporibus aliquid sed illum facilis repellendus optio provident tempora
+                    aperiam quam placeat harum illo!</p>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+
 </html>

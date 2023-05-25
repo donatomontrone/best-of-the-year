@@ -1,7 +1,6 @@
 package org.java.demo.controller;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.java.demo.obj.Movie;
@@ -68,7 +67,7 @@ public class MyController {
 			}
 		}
 		model.addAttribute("movies", movieStr);
-		return "movies";
+		return "lists";
 	}
 	
 	@GetMapping("/songs")
@@ -84,7 +83,7 @@ public class MyController {
 			}
 		}
 		model.addAttribute("songs", songsStr);
-		return "songs";
+		return "lists";
 	}
 	
 	@GetMapping("/movies/{id}")
